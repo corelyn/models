@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corelyn - Model Family</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --bg:#08080e;
+  --surface:#0f0f18;
+  --border:#1a1a2e;
+  --border-hi:#2a2a44;
+  --accent:#7c6aff;
+  --accent2:#a78bfa;
+  --text:#e8e8f0;
+  --muted:#5a5a78;
+}
+
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;}
+
+.bg-mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(ellipse 55% 45% at 15% 10%, rgba(124,106,255,.14) 0%, transparent 65%),
+  radial-gradient(ellipse 45% 55% at 85% 90%, rgba(167,139,250,.09) 0%, transparent 65%);
+}
+
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+  background-size:44px 44px;
+}
+
+.page{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;}
+
+.card{
+  width:100%;
+  max-width:960px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:2.4rem;
+  box-shadow:
+    0 0 0 1px rgba(124,106,255,.07),
+    0 40px 100px rgba(0,0,0,.7),
+    0 0 80px rgba(124,106,255,.05);
+}
+
+.card-title{
+  font-size:1.4rem;
+  font-weight:600;
+  text-align:center;
+  margin-bottom:2rem;
+}
+
+.sections{
+  display:flex;
+  gap:2rem;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.section{
+  flex:1 1 28%;
+}
+
+.section-title{
+  font-weight:600;
+  font-size:1.1rem;
+  color:white;
+  margin-bottom:1rem;
+}
+
+.model-list{list-style:none;display:flex;flex-direction:column;gap:0.8rem;}
+
+.model-list li{
+  display:flex;align-items:center;gap:0.8rem;
+  padding:.6rem .8rem;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:rgba(255,255,255,0.01);
+  transition:all .15s ease;
+}
+
+.model-list li:hover{
+  border-color:var(--border-hi);
+  background:rgba(124,106,255,.06);
+}
+
+.model-list a{text-decoration:none;color:var(--text);font-weight:500;}
+.model-list a:hover{color:var(--accent2);}
+.model-list img{border-radius:6px;}
+
+.logo-row{display:flex;flex-direction:column;align-items:center;gap:0.8rem;margin-bottom:2rem;text-align:center;}
+
+.logo-row img{display:block;margin-bottom:1rem;}
+
+.logo-title{font-size:1.2rem;font-weight:600;color:white;padding-bottom:1rem;}
+
+.model-list li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.model-desc {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  line-height: 1.3;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+
+<div class="page">
+  <div class="card">
+    <div class="logo-row">
+      <img src="./images/logo.png" width="48" height="48" alt="Corelyn logo">
+    <div>
+    <div class="card-title">Corelyn Model Family</div>
+    <div class="sections">
+      
+      <!-- Section 1 -->
+      <div class="section">
+        <div class="section-title">Neospecyn</div>
+        <ul class="model-list">
+          <li>
+            <img src="./images/neospecyn.png" width="40" height="40" alt="NeoH logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/NeoH">NeoH</a>
+              <p class="model-desc">The main model of the Neospecyn series</p>
+            </div>
+          </li>
+          <li>
+            <img src="./images/neospecyn.png" width="40" height="40" alt="Neo Mini logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/NeoMini">Neo Mini</a>
+              <p class="model-desc">Mini model of the Neospecyn series</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section">
+        <div class="section-title">Leonicity</div>
+        <ul class="model-list">
+          <li>
+            <img src="./images/leon.png" width="40" height="40" alt="Leon 1B logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/LeonCode">Leon 1B</a>
+              <p class="model-desc">Coding asistant of the Leonicity series</p>
+            </div>
+          </li>
+          <li>
+            <img src="./images/leon.png" width="40" height="40" alt="Leon 1B logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/LeonHypercode">Leon Hypercode</a>
+              <p class="model-desc">The better coding model of Leonicity</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section">
+        <div class="section-title">Coryn</div>
+        <ul class="model-list">
+          <li>
+            <img src="./images/coryninject.png" width="40" height="40" alt="Coryn Inject logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/CorynInject/">CorynInject</a>
+              <p class="model-desc">Prompt injection tool (EXPERIMENTAL)</p>
+            </div>
+          </li>
+          <li>
+            <img src="./images/coryn_pico.png" width="40" height="40" alt="Coryn Pico logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/CorynPico/">Coryn Pico</a>
+              <p class="model-desc">The smallest, fastest, and dumbest Coryn model made from scratch (EXPERIMENTAL)</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Experiments</div>
+        <ul class="model-list">
+          <li>
+            <img src="./images/kyo.png" width="40" height="40" alt="Coryn Inject logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/KYO">KYO</a>
+              <p class="model-desc">GAN PyTorch test</p>
+              <br>
+              <a href="https://corelynai-kyoend.hf.space/">DEMO</a>
+            </div>
+          </li>
+          <li>
+            <img src="./images/mlm_logo.png" width="40" height="40" alt="Coryn Pico logo">
+            <div>
+              <a href="https://huggingface.co/CorelynAI/MLM">MLM</a>
+              <p class="model-desc">200M AI model made from scratch!</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
